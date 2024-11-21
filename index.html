@@ -11,11 +11,13 @@
 <img id="dynamic-img">
 
 <script src="js/jquery-3.7.1.min.js"></script>
-<!--<script>
+<!--
+<script>
     $('#ajax-button').click(function (){
         /*console.log("Button is Worked");*/
         var http=new XMLHttpRequest();
         console.log(http.readyState, "After the XMLHttpRequest Object  Created");
+        /*http.open('GET', 'db/db.txt');*/
         http.open('GET', 'images/464475.jpg');
         console.log(http.readyState, "After the OPEN Method invoked");
         console.log(http.responseText);
@@ -58,11 +60,11 @@
 
 </script>-->
 
-<script>
+<!--<script>
     $('#ajax-button').click(function () {
         console.log("Request Started");
         var http = new XMLHttpRequest();
-        http.open('GET', 'db/db.txt', false);
+        http.open('GET', 'db/db.txt');
         http.send();
         http.onreadystatechange = function () {
             if (http.status == 200 && http.readyState == 4) {
@@ -70,6 +72,16 @@
                 console.log(http.responseText);
             }
         }
+    });
+</script>-->
+
+<script>
+    $('#ajax-button').click(function () {
+        console.log("Started");
+        $.ajax({
+            url: 'db/db.txt',
+        })
+        console.log("End");
     });
 </script>
 
