@@ -80,13 +80,16 @@
         console.log("Started");
         $.ajax({
             url: 'db/db.txt',
+            method: 'GET',
+            async: false, //synchronous request, but it is not recommended, because it will block the UI
             success: function (response) {
                 $('#para').text(response);
+                console.log(response);
             },
             error: function (error) {
                 console.log(error);
             }
-        })
+        });
         console.log("Ended");
     });
 </script>
