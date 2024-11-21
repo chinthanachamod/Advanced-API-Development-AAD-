@@ -11,7 +11,7 @@
 <img id="dynamic-img">
 
 <script src="js/jquery-3.7.1.min.js"></script>
-<script>
+<!--<script>
     $('#ajax-button').click(function (){
         /*console.log("Button is Worked");*/
         var http=new XMLHttpRequest();
@@ -41,9 +41,9 @@
 
         console.log("Request Finished !");
     });
-</script>
+</script>-->
 
-<script>
+<!--<script>
     // Synchronous request
     console.log("start");
     console.log("middle");
@@ -56,6 +56,24 @@
     }, 2000);
     console.log("end");
 
+</script>-->
+
+<script>
+    $('#ajax-button').click(function () {
+        console.log("Request Started");
+        var http = new XMLHttpRequest();
+        http.open('GET', 'db/db.txt');
+        http.send();
+        http.onreadystatechange = function () {
+            if (http.status == 200 && http.readyState == 4) {
+                $('#para').text(http.responseText);
+                console.log(http.responseText);
+            }
+        }
+    });
 </script>
+
+
+
 </body>
 </html>
