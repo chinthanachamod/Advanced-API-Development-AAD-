@@ -5,10 +5,10 @@
     <title>Ajax Examples</title>
 </head>
 <body>
-<h1>Ajax Example project</h1>
+<!--<h1>Ajax Example project</h1>
 <p id="para"> This is an example project for ajax</p>
 <button id="ajax-button">Send a Ajax Request</button>
-<img id="dynamic-img">
+<img id="dynamic-img">-->
 
 <script src="js/jquery-3.7.1.min.js"></script>
 <!--
@@ -79,7 +79,7 @@
     $('#ajax-button').click(function () {
         console.log("Started");
         $.ajax({
-            url: 'db/db.txt',
+            url: 'https://jsonplaceholder.typicode.com/comments', // JSON Placeholder Response
             method: 'GET',
             async: false, //synchronous request, but it is not recommended, because it will block the UI
             success: function (response) {
