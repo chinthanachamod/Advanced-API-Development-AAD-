@@ -79,9 +79,15 @@
     $('#ajax-button').click(function () {
         console.log("Started");
         $.ajax({
-            url: 'db/db.txt',
+            url: 'db/d.txt',
+            success: function (response) {
+                $('#para').text(response);
+            },
+            error: function (error) {
+                console.log(error);
+            }
         })
-        console.log("End");
+        console.log("Ended");
     });
 </script>
 
